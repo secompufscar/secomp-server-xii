@@ -21,9 +21,11 @@ export default {
             throw new ApiError("Usuario ou senha invalida", ErrorsCode.NOT_FOUND)
         }
 
-        const token = jwt.sign( { userId: user.id }, auth.secret_token, {
-            expiresIn: auth.expires_in_token
-        })
+        const token = jwt.sign(
+            { userId: user.id }, 
+            auth.secret_token, 
+            { expiresIn: "1h" }
+        );
     
         const { senha:_, ...userLogin } = user
         

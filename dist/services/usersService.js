@@ -63,9 +63,7 @@ exports.default = {
             if (!verifyPsw) {
                 throw new api_errors_1.ApiError("Usuario ou senha invalida", api_errors_1.ErrorsCode.NOT_FOUND);
             }
-            const token = jwt.sign({ userId: user.id }, auth_1.auth.secret_token, {
-                expiresIn: auth_1.auth.expires_in_token
-            });
+            const token = jwt.sign({ userId: user.id }, auth_1.auth.secret_token, { expiresIn: "1h" });
             const { senha: _ } = user, userLogin = __rest(user, ["senha"]);
             return {
                 user: userLogin,
