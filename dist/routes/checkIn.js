@@ -64,9 +64,6 @@ router.post('/:userId/:activityId', authMiddleware_1.authMiddleware, checkInCont
  *                     type: string
  *                   activityId:
  *                     type: string
- *                   checkInTime:
- *                     type: string
- *                     format: date-time
  *       404:
  *         description: Atividade não encontrada ou sem participantes.
  */

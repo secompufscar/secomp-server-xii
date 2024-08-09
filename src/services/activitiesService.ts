@@ -39,7 +39,7 @@ export default {
         return newAtividade
     },
 
-    async update(id: string, { nome, data, palestranteNome, categoriaId, vagas }: UpdateActivityDTOS ): Promise<UpdateActivityDTOS> {
+    async update(id: string, { nome, data, palestranteNome, categoriaId, detalhes }: UpdateActivityDTOS ): Promise<UpdateActivityDTOS> {
         const existingAtividade = await activitiesRepository.findById(id)
 
         if (!existingAtividade) {
@@ -51,7 +51,7 @@ export default {
             data,
             palestranteNome,
             categoriaId,
-            vagas
+            detalhes,
         })
 
         return updatedAtividade
